@@ -44,3 +44,5 @@ def cargar_texto(ruta: str) -> str:
     with open(ruta, "r") as file:
         texto = file.read()
     return texto
+
+print ("Auxiliar ya lo tengo bien")

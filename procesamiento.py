@@ -21,3 +21,5 @@ def stopWords (token: list) -> list:
         if palabra not in stop_word:
             texto_limpio.append(palabra)
     return texto_limpio
+
+print("Procesamiento cargado correctamente")

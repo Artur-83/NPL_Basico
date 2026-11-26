@@ -1,16 +1,28 @@
-import auxiliar
-import procesamiento
+from auxiliar import seleccionar_archivo
+from auxiliar import cargar_texto
 
-ruta = auxiliar.seleccionar_archivo()
-print(ruta)
+from Reporte import generar_reporte
 
-texto = auxiliar.cargar_texto(ruta)
 
-texto_limpio = procesamiento.limpiar(texto)
+def main():
 
-# 2. Convertir la cadena en lista de tokens
-tokens = procesamiento.token(texto_limpio)
+    ruta = seleccionar_archivo(
+        titulo="Seleccione el archivo de texto",
+        tipos_archivo=[
+            ("Archivos de texto", "*.txt")
+        ]
+    )
 
-# 3. Filtrar stop words
-palabras_filtradas = procesamiento.stopWords(tokens)
-print("3. Sin stop words:", palabras_filtradas)
+    if ruta:
+
+        texto = cargar_texto(ruta)
+
+        generar_reporte(texto)
+
+    else:
+
+        print("No se seleccionó ningún archivo.")
+
+
+if __name__ == "__main__":
+    main()
