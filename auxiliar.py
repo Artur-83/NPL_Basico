@@ -37,3 +37,10 @@ if __name__ == "__main__":
         print(f"Archivo seleccionado: {archivo}")
     else:
         print("No se seleccionó ningún archivo.")
+
+
+def cargar_texto(ruta: str) -> str:
+    """Carga el contenido de la ruta del archivo que seleccionaste"""
+    with open(ruta, "r") as file:
+        texto = file.read()
+    return texto
