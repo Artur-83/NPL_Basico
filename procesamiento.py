@@ -1,6 +1,6 @@
 stop_word = {"el","la","los","las","un","una","unos","unas",
     "de","del","que","y","o","es","en","a","por","para","con",
-    "su","sus","al"}
+    "su","sus","al","no","le","lo","habia","se","era","como","había","pero"}
 
 def limpiar(texto: str) -> str:
     """Elimina los signos de puntuación del texto:"""
