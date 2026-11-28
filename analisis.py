@@ -59,52 +59,28 @@ def diversidad_lexica(token: list) ->float:
     return round(len(palabras_unicas) / len(token), 3)
 
 def frecuencia(token: list) -> dict:
-
-    """
-    Calcula la frecuencia con la que aparecen palabras.
-    """
-
+    """Calcula la frecuencia con la que aparecen palabras."""
     frecuencias = {}
-
     for palabra in token:
-
         if palabra in frecuencias:
-
             frecuencias[palabra] += 1
-
         else:
-
             frecuencias[palabra] = 1
-
     return frecuencias
 
 
 def top5(token: list) -> list:
-
-    """
-    Calcula las 5 palabras que más aparecen en el texto.
-    """
-
+    """ Calcula las 5 palabras que más aparecen en el texto."""
     frecuencias = frecuencia(token)
-
     lista = []
-
     for palabra in frecuencias:
-
         lista.append((palabra, frecuencias[palabra]))
-
     n = len(lista)
-
     for i in range(n):
-
         for j in range(n - i - 1):
-
             if lista[j][1] < lista[j + 1][1]:
-
                 temporal = lista[j]
-
                 lista[j] = lista[j + 1]
-
                 lista[j + 1] = temporal
 
     return lista[:5]
